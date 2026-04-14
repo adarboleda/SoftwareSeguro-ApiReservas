@@ -1,0 +1,174 @@
+{
+  "info": {
+    "name": "Hotel Reservas API",
+    "description": "Colección de pruebas para la API de Gestión de Reservas de Hotel",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Hoteles (/api/hoteles)",
+      "item": [
+        {
+          "name": "1. Obtener todos los hoteles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:3000/api/hoteles"
+          }
+        },
+        {
+          "name": "2. Obtener hotel por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:3000/api/hoteles/1"
+          }
+        },
+        {
+          "name": "3. Crear un nuevo hotel",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Hotel Primavera\",\n  \"direccion\": \"Av. de las Flores 40\",\n  \"estrellas\": 5,\n  \"telefono\": \"555-3456\"\n}"
+            },
+            "url": "http://localhost:3000/api/hoteles"
+          }
+        },
+        {
+          "name": "4. Actualizar un hotel",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Hotel Primavera Editado\",\n  \"direccion\": \"Av. de las Flores 40 Modificada\",\n  \"estrellas\": 4,\n  \"telefono\": \"555-0000\"\n}"
+            },
+            "url": "http://localhost:3000/api/hoteles/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Clientes (/api/clientes)",
+      "item": [
+        {
+          "name": "1. Obtener todos los clientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:3000/api/clientes"
+          }
+        },
+        {
+          "name": "2. Obtener cliente por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:3000/api/clientes/1"
+          }
+        },
+        {
+          "name": "3. Crear un nuevo cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Torres\",\n  \"email\": \"ana.torres@email.com\",\n  \"telefono\": \"555-8888\"\n}"
+            },
+            "url": "http://localhost:3000/api/clientes"
+          }
+        },
+        {
+          "name": "4. Actualizar un cliente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Torres Editada\",\n  \"email\": \"ana_nueva@email.com\",\n  \"telefono\": \"555-7777\"\n}"
+            },
+            "url": "http://localhost:3000/api/clientes/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reservas (/api/reservas)",
+      "item": [
+        {
+          "name": "1. Obtener todas las reservas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:3000/api/reservas"
+          }
+        },
+        {
+          "name": "2. Obtener reserva por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "http://localhost:3000/api/reservas/1"
+          }
+        },
+        {
+          "name": "3. Crear una nueva reserva",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fecha_entrada\": \"2025-08-01\",\n  \"fecha_salida\": \"2025-08-10\",\n  \"num_huespedes\": 2,\n  \"hotel_id\": 1,\n  \"cliente_id\": 1\n}"
+            },
+            "url": "http://localhost:3000/api/reservas"
+          }
+        },
+        {
+          "name": "4. Actualizar una reserva",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fecha_entrada\": \"2025-08-05\",\n  \"fecha_salida\": \"2025-08-15\",\n  \"num_huespedes\": 3,\n  \"hotel_id\": 2,\n  \"cliente_id\": 2\n}"
+            },
+            "url": "http://localhost:3000/api/reservas/1"
+          }
+        }
+      ]
+    }
+  ]
+}
