@@ -22,8 +22,8 @@ npm install
 
 El proyecto requiere una base de datos MySQL.
 
-1. **Crear base de datos y tablas:** Puedes ejecutar el script `hotel_reservas.sql` (ubicado dentro de la carpeta `reservas-orm`) en el servidor MySQL.
-   - _(Opcional)_ Si necesitas información inicial, puedes ejecutar también `datos_prueba.sql`.
+1. **Crear base de datos y tablas:** Se puede ejecutar el script `hotel_reservas.sql` (ubicado dentro de la carpeta `reservas-orm`) en el servidor MySQL.
+   - _(Opcional)_ Si se necesita información inicial, se puede ejecutar también `datos_prueba.sql`.
    - _(Nota)_ Sequelize está configurado para sincronizar los modelos de la base de datos automáticamente (`sequelize.sync()`), pero es recomendable asegurar que la DB `hotel_reservas` exista.
 2. **Variables de entorno:** Configurar el archivo `.env` en la raíz de la carpeta `reservas-orm`. Debería tener la siguiente estructura:
 
