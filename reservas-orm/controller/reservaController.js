@@ -40,6 +40,17 @@ export const createReserva = async (req, res) => {
     if (!fecha_entrada || !fecha_salida || !hotel_id || !cliente_id) {
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
+    
+    const hotelExistente = await Hotel.findByPk(hotel_id);
+    if (!hotelExistente) {
+      return res.status(404).json({ error: "El hotel no existe" });
+    }
+    
+    const clienteExistente = await Cliente.findByPk(cliente_id);
+    if (!clienteExistente) {
+      return res.status(404).json({ error: "El cliente no existe" });
+    }
+
     const nuevaReserva = await Reserva.create({ fecha_entrada, fecha_salida, num_huespedes, hotel_id, cliente_id });
     res.status(201).json(nuevaReserva);
   } catch (error) {
@@ -58,6 +69,17 @@ export const updateReserva = async (req, res) => {
     if (!fecha_entrada || !fecha_salida || !hotel_id || !cliente_id) {
       return res.status(400).json({ error: "Faltan campos obligatorios" });
     }
+    
+    const hotelExistente = await Hotel.findByPk(hotel_id);
+    if (!hotelExistente) {
+      return res.status(404).json({ error: "El hotel no existe" });
+    }
+    
+    const clienteExistente = await Cliente.findByPk(cliente_id);
+    if (!clienteExistente) {
+      return res.status(404).json({ error: "El cliente no existe" });
+    }
+
     await reserva.update({ fecha_entrada, fecha_salida, num_huespedes, hotel_id, cliente_id });
     res.status(200).json(reserva);
   } catch (error) {
